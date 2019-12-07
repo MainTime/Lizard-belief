@@ -164,5 +164,4 @@ function mouseMoved() {
     }
     
   }
-  console.log(cHover)
 }
