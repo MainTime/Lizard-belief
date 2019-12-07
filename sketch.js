@@ -110,8 +110,8 @@ function checkRectOverlap(rect1, rect2) {
 
 //works
 function getRandomRect() {
-  var w = random(windowHeight / itemSizeDivider, windowWidth / (itemSizeDivider / 2))
-  var h = random(windowHeight / itemSizeDivider, windowHeight / (itemSizeDivider / 2))
+  var w = random(windowHeight / itemSizeDivide, windowWidth / (itemSizeDivider / 2))
+  var h = random(windowHeight / itemSizeDivider +50, windowHeight / (itemSizeDivider / 2))
   var x = random(itemBorderSize, windowWidth - (w + itemBorderSize))
   var y = random(100, windowHeight - (h + itemBorderSize))
 
