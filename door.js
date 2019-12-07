@@ -38,8 +38,8 @@ class door {
     }
   }
   clicked() {
-    if (this.num < day()) {
-      window.location.href =     'https://raw.githubusercontent.com/MainTime/MainTime.github.io/master/img/annadvkal/' + this.num + ".png"
+    if (this.num <= day()) {
+      window.location.href = 'https://maintime.github.io/img/annadvkal/' + this.num + ".html"
     }
   }
 }

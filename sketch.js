@@ -1,13 +1,15 @@
-let doors = []
 
+let doors = []
 let cHover
 
-const backcolor = (46, 46, 46)
-const itemSizeDivider = 12
-const itemBorderSize = 15
+//-----------------------------------------------------------------------------------
+const backcolor = (46, 46, 46)       //
+const itemSizeDivider = 12           //
+const itemBorderSize = 15            //
 const itemColorer = function() {
   return itemColorGen()
 } // function used to get the colors of the doors
+//-----------------------------------------------------------------------------------
 
 //works
 function setup() {
@@ -35,16 +37,13 @@ function draw() {
   background(backcolor);
   //console.log('cnt', doors.length)
   for (let i = 0; i < doors.length; i++) {
-    cHover = ""
-    if (checkIfMouseIsOver) {
-      cHover = i
-    }
+
     doors[i].draw()
   }
   textSize(64)
   textFont('Roboto Black')
   text("Anne's Adventskalender", 0, 0, windowWidth, 100)
-
+  redraw()
 }
 
 //idk
@@ -58,14 +57,12 @@ function checkIfDoorFits(x, y, w, h) {
 
     let ind = 0
 
-    for (let doorIndex = 0; doorIndex < doors.length; doorIndex++) {
-      console.log(checkOverlapWithIndex(x, y, w, h, doorIndex))
+    for (let doorIndex = 0; doorIndex < doors.length; doorIndex++) { 
       if (checkOverlapWithIndex(x, y, w, h, doorIndex) == true) {
         ind = ind + 1
       }
 
-    }
-    console.log('ind', ind)
+    } 
     if (ind == 0) {
       return true
     } else {
@@ -90,13 +87,7 @@ function checkOverlapWithIndex(x, y, w, h, i) {
 
 //works
 function ifFirstDoor() {
-  if (doors.length == 0) {
-    console.log('this is the first door');
-    return true
-  } else {
-    console.log('this is not the first door');
-    return false
-  }
+    return (doors.length == 0)
 }
 
 //works
@@ -130,13 +121,45 @@ function itemColorGen() {
 }
 
 //works not
-function checkIfMouseIsOver(i) {
+function checkIfMouseIsOver(i) { 
   let cd = doors[i]
-  return (mouseX >= cd.x || mouseX <= (cd.x + cd.w) || mouseY >= cd.y || mouseY <= (cd.y + cd.h))
-
+return mouseIsOver(cd)
 }
 
 //works
+function mouseIsOver(obj) {
+
+    if (mouseX >= obj.x && mouseX < obj.x + obj.w) {
+
+      if (mouseY >= obj.y && mouseY < obj.y + obj.h) {
+
+        return true;
+
+      }
+
+      return false;
+
+    }
+
+    return false;
+
+  }
+  
+//works
 function mouseClicked() {
   doors[cHover].clicked()
+}
+
+function mouseMoved() {
+  let i = 0
+  for (let i = 0; i < doors.length; i++) {
+    
+    if (checkIfMouseIsOver(i) == true) {
+      
+      cHover = i
+      
+    }
+    
+  }
+  console.log(cHover)
 }
