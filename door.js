@@ -17,7 +17,7 @@ class door {
       rect(this.x, this.y, this.w, this.h)
       fill(255)
       textFont('Roboto Thin')
-      textSize(this.w / 3);
+      textSize(round(this.w / 3,0));
       textAlign(CENTER, CENTER);
       fill(0)
       rect(this.x + this.w / 2, this.y, 1,this.h)
@@ -28,7 +28,7 @@ class door {
       rect(this.x, this.y, this.w, this.h)
       fill(0)
       textFont('Roboto Thin')
-      textSize(this.w / 3);
+      textSize(round(this.w / 3,0));
       textAlign(CENTER, CENTER);
       fill(0)
       text(' ' + this.num, this.x, this.y, this.w, this.h)
