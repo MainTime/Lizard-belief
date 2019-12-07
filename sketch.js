@@ -35,7 +35,9 @@ function generateNewDoor(num) {
 
 //works
 function draw() {
-  background(backcolor);
+  background(backcolor);  
+  fill(36)
+  rect(0,0,windowWidth, 85)
   //console.log('cnt', doors.length)
   for (let i = 0; i < doors.length; i++) {
 
