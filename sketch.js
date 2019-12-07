@@ -13,9 +13,10 @@ const itemColorer = function() {
 
 //works
 function setup() {
+  console.log('v1.1')
   itemColorer()
   createCanvas(windowWidth, windowHeight);
-  for (let i = 0; i < 25; i++) {
+  for (let i = 1; i < 25; i++) {
     generateNewDoor(i);
   }
 }
